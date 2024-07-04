@@ -6,8 +6,6 @@ import logging
 import os
 from dotenv import load_dotenv, find_dotenv
 
-from typing import Union
-
 from fastapi import FastAPI
 
 # Load environment variables from .env file
