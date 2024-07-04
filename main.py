@@ -8,11 +8,6 @@ from dotenv import load_dotenv, find_dotenv
 
 from fastapi import FastAPI
 
-# Load environment variables from .env file
-dotenv_path = find_dotenv()
-if not dotenv_path:
-    raise FileNotFoundError("Could not find .env file")
-load_dotenv(dotenv_path)
 
 app = FastAPI()
 
