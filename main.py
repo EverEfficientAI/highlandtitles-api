@@ -56,11 +56,8 @@ async def read_plot(plot_number: str):
         osx, osy = result
 
         # Convert to integers and scale down
-        try:
-            osx = int(osx) / 100
-            osy = int(osy) / 100
-        except ValueError:
-            raise HTTPException(status_code=500, detail="Invalid OSx or OSy values in database.")
+        osx = int(str(osx)[:-3])
+        osy = int(str(osy)[:-3])
 
         # Log the coordinates before transformation
         logging.info(f"Scaled coordinates: OSx={osx}, OSy={osy}")
