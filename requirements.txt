@@ -1,6 +1,7 @@
 psycopg2-binary
 pandas
 pyproj
+bng_latlon
 annotated-types==0.6.0
 anyio==4.2.0
 click==8.1.7
