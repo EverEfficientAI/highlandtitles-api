@@ -79,8 +79,8 @@ async def read_plot(plot_number: str):
             # Check for valid float values
             if not (-90 <= lat <= 90 and -180 <= lon <= 180):
                 raise HTTPException(status_code=500, detail="Invalid latitude or longitude values.")
-
-            google_maps_link = f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+            # "https://www.google.com/maps/@{lat},{lon},{zoom}
+            google_maps_link = f"https://www.google.com/maps/@{lat},{lon},15z"
             return {"PlotNumber": plot_number, "OSx": osx, "OSy": osy, "Latitude": lat, "Longitude": lon, "GoogleMapsLink": google_maps_link}
         
         except Exception as e:
