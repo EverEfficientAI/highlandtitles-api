@@ -47,7 +47,7 @@ async def read_plot(plot_number: str):
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    query = sql.SQL("SELECT OSx, OSy FROM plots WHERE PlotNumber = %s")
+    query = sql.SQL("SELECT osx, osy FROM highlandtitles_plots WHERE plotnumber = %s")
     cursor.execute(query, (plot_number,))
     result = cursor.fetchone()
     
